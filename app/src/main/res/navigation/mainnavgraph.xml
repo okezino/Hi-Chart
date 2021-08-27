@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.plcoding.streamchatapp.ui.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_channelFragment"
+            app:destination="@id/channelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/channelFragment"
+        android:name="com.plcoding.streamchatapp.ui.channel.ChannelFragment"
+        android:label="ChannelFragment" >
+        <action
+            android:id="@+id/action_channelFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

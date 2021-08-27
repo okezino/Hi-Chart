@@ -10,10 +10,12 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.plcoding.streamchatapp.R
 import com.plcoding.streamchatapp.databinding.FragmentLoginBinding
 import com.plcoding.streamchatapp.util.Const
+import com.plcoding.streamchatapp.util.safeNavigation
 import com.plcoding.streamchatapp.viewModel.LoginEvent
 import com.plcoding.streamchatapp.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,6 +58,7 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>() {
                     }
                    is LoginEvent.Success ->{
                        idleState()
+                       findNavController().safeNavigation(R.id.action_loginFragment_to_channelFragment)
                        Toast.makeText(requireContext(), "Successful Login", Toast.LENGTH_SHORT).show()
 
                     }

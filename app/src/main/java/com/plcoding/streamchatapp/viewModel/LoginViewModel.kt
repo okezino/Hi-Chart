@@ -25,9 +25,6 @@ class LoginViewModel @Inject constructor(
     fun connectUsers(username: String) {
         viewModelScope.launch {
             if (isValidUserName(username = username)) {
-                Log.d("VIEWMODEL","FUCK")
-                Log.d("VIEWMODEL","FUCK$MIN_USER_NAME")
-                Log.d("VIEWMODEL","FUCK${username}")
 
                 val result = chatClient.connectGuestUser(
                     userId = username.trim(),
