@@ -1,6 +1,6 @@
 # Hi-Chat
 
-##Technology 
+## Technology 
 ### Dependency Injection Libray : Dagger Hilt
 ### External Chat Api : Stream’s Chat API
 ### Multithreading Library : Coroutine 
